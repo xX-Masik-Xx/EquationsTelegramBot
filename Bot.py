@@ -18,7 +18,8 @@ def solve_quadratic_equation(equation: str) -> tuple[int] | bool:
     x1, x2 = (-b + sqrt(discriminant))/(2*a), (-b - sqrt(discriminant))/(2*a)
     return (x1, x2) if x1 != x2 else tuple([x1])
 
-bot = telebot.TeleBot("6253421345:AAGlcvjJzfgBXHhRe4iwzMa7ISvdYEyLqUo")
+with open("token.txt", "r") as token:
+    bot = telebot.TeleBot(token.read())
     
 #bot setup
 keyboard = ReplyKeyboardMarkup(resize_keyboard=True,)
